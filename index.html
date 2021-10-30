@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Tabs</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="icon" href="favicon.svg">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<div class="container">
+		<main class="main">
+			<h1 class="sr-only">Game tabs</h1>
+			<div class="game-card">
+				<nav class="nav-tabs game-card__nav-tabs">
+					<ul class="nav-tabs__list">
+						<li>
+							<a class="nav-tabs__link" id="link_info" href="#tooltip">
+								<img src="image/tooltip.png" alt="tooltip" class="img-responsive nav-tabs__img">
+								<p>Information</p>
+							</a>
+						</li>
+						<li>
+							<a class="nav-tabs__link" id="link_card" href="#card">
+								<img src="image/card.png" alt="card" class="img-responsive nav-tabs__img">
+								<p>Ratings info</p>
+							</a>
+						</li>
+						<li>
+							<a class="nav-tabs__link" id="link_basket" href="#basket">
+								<img src="image/basket.png" alt="basket" class="img-responsive nav-tabs__img">
+								<p>Where to by</p>
+							</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="game-card__content">
+					<div class="tab-info tab tab--active" id="tooltip">
+						<div class="tab-info__lead">
+							<img class="tab-info__img" src="image/game-foto.png" alt="foto game FarCry">
+							<div class="tab-descr tab-info__tab-descr">
+								<div class="tab-descr__title">
+									FarCry 4
+								</div>
+								<div class="tab-descr__subtitle">
+									First Released Nov 17, 2014
+								</div>
+								<div class="circle tab-descr__score">
+									7.8
+								</div>
+								<div class="tab-decr__info">
+									In Far Cry 4, players find themselves in Kyrat, a breathtaking, perilous and wild region of the Hima layas struggling under the regime of a despotic self-appointed king.
+								</div>
+							</div>
+						</div>
+						<div class="tab-info__footer">
+							<fieldset class="rating">
+								<legend class="sr-only">Game star rating</legend>
+								<div class="rating__body">
+									<input type="radio" class="rating__item" value="1" aria-label="Ужасно" name="rating" checked>
+									<input type="radio" class="rating__item" aria-label="Сносно" value="2" name="rating">
+									<input type="radio" class="rating__item" aria-label="Нормально" value="3" name="rating">
+									<input type="radio" class="rating__item" aria-label="Хорошо" value="4" name="rating">
+									<input type="radio" class="rating__item" aria-label="Отлично" value="5" name="rating">
+								</div>
+							</fieldset>
+							<div class="price">
+								<p class="price__discount">20% OFF!</p>
+								<p class="price__cost">$59.96</p>
+							</div>
+							<button class="btn">BUY IT NOW</button>
+						</div>
+					</div>
+					<div class="tab-card tab" id="card">
+						Content tab-card
+					</div>
+
+					<div class="tab-basket tab" id="basket">
+						Content tab-basket
+					</div>
+				</div>
+			</div>
+		</main>	
+	</div>	
+
+	<script src="js/main.js"></script>		
+</body>
+</html>
+
