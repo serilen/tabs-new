@@ -74,8 +74,6 @@ a {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: 'Aleo', serif;
-  font-weight: 400;
   color: #ffffff;
   text-align: center;
   vertical-align: middle;
@@ -102,11 +100,11 @@ a {
   .btn:focus {
     border-color: #000000; }
   .btn:hover, .btn:active {
-    color: #5474fd;
+    color: #13e28d;
     background-color: #ffffff;
     cursor: pointer; }
   .btn:active {
-    border-color: #5474fd; }
+    border-color: #13e28d; }
 
 .game-card {
   background-color: #212534;
@@ -119,6 +117,7 @@ a {
     background-color: #2b3040;
     padding: 30px 40px 0 45px; }
   .game-card__content {
+    position: relative;
     padding: 60px 45px 0; }
 
 .nav-tabs__list {
@@ -144,6 +143,8 @@ a {
   .nav-tabs__link:hover, .nav-tabs__link:focus, .nav-tabs__link--active {
     border-bottom-color: #fbfbfb;
     opacity: 1; }
+  .nav-tabs__link--active {
+    cursor: default; }
 
 .nav-tabs__img {
   margin-left: auto;
@@ -151,7 +152,14 @@ a {
   margin-bottom: 5px; }
 
 .tab {
-  display: none; }
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  left: -10000px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10000; }
   .tab-info {
     position: relative; }
     .tab-info__lead {
@@ -160,9 +168,7 @@ a {
       display: flex;
       margin-bottom: 15px; }
     .tab-info__img {
-      margin-right: 40px;
-      width: 163px;
-      height: 235px; }
+      margin-right: 40px; }
     .tab-info__tabs-descr {
       color: #b7bacd; }
     .tab-info__footer {
@@ -180,7 +186,10 @@ a {
       -ms-flex-align: center;
       align-items: center; }
   .tab--active {
-    display: block; }
+    visibility: visible;
+    opacity: 1;
+    left: 0;
+    top: 0; }
 
 .tab-descr {
   position: relative;
@@ -189,10 +198,12 @@ a {
   .tab-descr__title {
     padding-top: 15px;
     font-size: 32px;
-    line-height: 1; }
+    line-height: 1;
+    margin-bottom: 10px; }
   .tab-descr__subtitle {
     margin-bottom: 40px;
-    color: #fdfdfd; }
+    color: #fdfdfd;
+    font-size: 14px; }
   .tab-descr__score {
     text-align: center;
     line-height: 65px;
@@ -200,6 +211,9 @@ a {
     top: 0;
     right: 0;
     font-size: 20px; }
+  .tab-descr__info {
+    color: #b7bacd;
+    font-size: 14px; }
 
 .circle,
 .circle::before {
@@ -229,23 +243,12 @@ a {
   transform: rotate(-45deg); }
 
 .rating {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 0;
-  margin: 0;
   border: none; }
   .rating__body {
     position: relative;
-    width: 128px;
+    width: 140px;
     height: 20px;
-    background-color: #212534;
-    background-image: url("../image/star-off.svg");
-    background-size: contain;
-    background-repeat: space;
+    background-image: url("../image/star-off.png");
     background-repeat-y: no-repeat; }
   .rating__item {
     -webkit-appearance: none;
@@ -255,36 +258,30 @@ a {
     position: absolute;
     top: 0;
     left: 0;
-    width: 22px;
+    width: 28px;
     height: 20px; }
     .rating__item:focus {
       outline: none; }
     .rating__item:checked, .rating__item:hover {
-      background-repeat: space;
-      background-color: #212534;
-      background-image: url("../image/star-on.svg");
-      background-size: contain;
+      background-image: url("../image/star-on.png");
       background-repeat-y: no-repeat; }
     .rating__item:hover ~ .rating__item {
-      background-repeat: space;
-      background-color: #212534;
-      background-image: url("../image/star-off.svg");
-      background-size: contain;
+      background-image: url("../image/star-off.png");
       background-repeat-y: no-repeat; }
     .rating__item:nth-of-type(1) {
-      width: 22px;
+      width: 28px;
       z-index: 5; }
     .rating__item:nth-of-type(2) {
-      width: 47px;
+      width: 56px;
       z-index: 4; }
     .rating__item:nth-of-type(3) {
-      width: 74px;
+      width: 84px;
       z-index: 3; }
     .rating__item:nth-of-type(4) {
-      width: 101px;
+      width: 112px;
       z-index: 2; }
     .rating__item:nth-of-type(5) {
-      width: 128px;
+      width: 140px;
       z-index: 1; }
 
 .price__discount {
