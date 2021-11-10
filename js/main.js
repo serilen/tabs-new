@@ -1,42 +1,37 @@
 ;(function(){
 	"use strict";
 
-	const tabInfo = document.getElementById("link_info");
-	const tabCard = document.getElementById("link_card");
-	const tabBasket = document.getElementById('link_basket');
-	const tooltip = document.getElementById('tooltip');
-	const card = document.querySelector(".tab-card");
-	const basket = document.querySelector(".tab-basket");
+	/*const tabLinks = document.querySelectorAll(".nav-tabs__link");
+	const tabs = document.querySelectorAll(".tab");
 
-	tabInfo.classList.add("nav-tabs__link--active");
-	tooltip.classList.add("tab--active");
-	tabInfo.addEventListener("click", () => {
-		card.classList.remove("tab--active");
-		basket.classList.remove("tab--active");
-		tooltip.classList.add("tab--active");
-		tabBasket.classList.remove("nav-tabs__link--active");
-		tabCard.classList.remove("nav-tabs__link--active");
-		tabInfo.classList.add("nav-tabs__link--active");
+	for (let i=0; i < tabLinks.length; i++) {
+		tabLinks[i].addEventListener("click", function(event) {
+			event.preventDefault();
+			
+			for (let i=0; i < tabLinks.length; i++) {
+				tabLinks[i].classList.remove("nav-tabs__link--active");
+			}
+			this.classList.add("nav-tabs__link--active");
+
+			for (let i=0; i < tabs.length; i++) {
+				tabs[i].classList.remove("tab--active");
+			}
+
+			document.querySelector(this.hash).classList.add("tab--active");
+		});
+	}*/
+
+	$('.js-nav-tabs__link').on('click', function(event) {
+		event.preventDefault();
+		
+		$('.js-nav-tabs__link').removeClass("nav-tabs__link--active");
+		$('.tab').removeClass("tab--active");
+
+		$(this).addClass('nav-tabs__link--active');
+		let hash = $(this).attr('href');
+		$(hash).addClass("tab--active");
+
 	});
-
-	tabCard.addEventListener("click", () => {
-		tooltip.classList.remove("tab--active");
-		basket.classList.remove("tab--active");
-		card.classList.add("tab--active");
-		tabBasket.classList.remove("nav-tabs__link--active");
-		tabInfo.classList.remove("nav-tabs__link--active");
-		tabCard.classList.add("nav-tabs__link--active");
-	});
-
-	tabBasket.addEventListener("click", () => {
-		tooltip.classList.remove("tab--active");
-		card.classList.remove("tab--active");
-		basket.classList.add("tab--active");
-		tabInfo.classList.remove("nav-tabs__link--active");
-		tabCard.classList.remove("nav-tabs__link--active");
-		tabBasket.classList.add("nav-tabs__link--active");
-	});
-
 
 })();
 
